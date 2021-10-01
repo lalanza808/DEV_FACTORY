@@ -1,80 +1,57 @@
-## DEV_FACTORY - 2021 
+## DEV_FACTORY - 2021
 
-a development template for web3 
+a development template for web3
 
 - dev_divi  
 
-# REPOSITORY STATUS: not working yet : [ 
+# Basic Sample Hardhat Project
 
-## PART 1: SETUP 
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-local environment 
+Try running some of the following tasks:
 
-hardhat + contract + frontend html 
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```
 
-0. delete folder hardhat 
+# Setup
 
-1. open 2 terminals 
+1. Install Javascript dependencies
 
-2. run these commands in terminal 1 
+`npm install`
 
-# mkdir hardhat 
+2. In another terminal run a local node
 
-# cd hardhat
+`npx hardhat node`
 
-# npm install --save-dev hardhat && npx hardhat
+3. Import a private key from above node output into MetaMask for testing locally
 
-# [choose defaults for all options]
+> in metamask, go to import account -> paste private key
 
-# npm i dotenv
+4. Setup local network in MetaMask
 
-# npm install @openzeppelin/contracts
+> in metamask, go to settings > networks > add network
+> enter New RPC URL: http://localhost:8545, enter Chain ID: 31337, Currency Symbol: ETH  
 
-# npm install --save-dev "hardhat@^2.6.4" "@nomiclabs/hardhat-waffle@^2.0.0" "ethereum-waffle@^3.0.0" "chai@^4.2.0" "@nomiclabs/hardhat-ethers@^2.0.0"
+5. Deploy contract to local node
 
-# cd .. 
+`npx hardhat run scripts/deploy.js --network localhost`
 
-# npm install web3 --save 
+6. Save the contract address and ABI in your frontend Javascript
 
-^ [use this in whatever directory your factory.html is]
+`cat artifacts/contracts/Greeter.sol/Greeter.json`
+> copy/paste contract address from above contract deploy command into Javascript section of `index.html`
+> copy/paste ABI into Javascript section of `index.html`
 
-# [in terminal 2] cd hardhat 
+# TODO
 
-# [in terminal 2] npx hardhat node
-^ this command must be run every time to start your local blockchain 
-
-# copy a private key shown 
-
-# in metamask, go to settings > networks > add network
-# enter New RPC URL: http://localhost:8545, enter Chain ID: 31337, Currency Symbol: ETH  
-
-# in metamask, go to import account -> paste private key 
-
-## PART 2: DEPLOY 
-
-1. launch smart contract [do not change anything in smart contract yet!]
-
-# [in terminal 1] cd hardhat 
-
-# npx hardhat run scripts/sample-script.js 
-
-## PART 3: MODIFY
-
-after making changes to smart contract and redeploying, 
-in dev_factory.html, 
-
-# 1. replace the content in variable ABI with the content in /artifacts/contracts/Greeter.json
-
-# 2. Replace the content in variable contractAddress with your new address [e.g. 0x5FbDB2315678afecb367f032d93F642f64180aa3]
-
-#
-
-#
-
-#
-
-# next to do: 
-    fix this shit 
-    create react site template 
-    set function 
-    integrate metamask_onboarding 
+* fix this shit
+* create react site template
+* set function
+* integrate metamask_onboarding
