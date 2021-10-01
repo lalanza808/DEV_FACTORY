@@ -2,7 +2,7 @@
 
 a development template for web3 
 
-- divine_dev  
+- dev_divi  
 
 # REPOSITORY STATUS: not working yet : [ 
 
