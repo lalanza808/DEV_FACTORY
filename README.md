@@ -74,8 +74,7 @@ in dev_factory.html,
 #
 
 # next to do: 
-    make this an anonymous repository with username dev_divi  
-
+    fix this shit 
     create react site template 
     set function 
     integrate metamask_onboarding 
